@@ -1,0 +1,107 @@
+## 📘 My Personal Notes
+
+### 🗓️ Week 1: Introduction to Database (DB)
+
+#### 📍 Definition and Purpose of Database
+
+Database (DB) adalah kumpulan data yang terstruktur, sementara Sistem Manajemen Database (DBMS) adalah perangkat lunak yang mengelola dan berinteraksi dengan data tersebut.
+
+DBMS adalah alat yang digunakan untuk membaca, menulis, dan mengorganisasi data dalam database. Ini bertindak sebagai antarmuka antara database sebenarnya dan pengguna atau program aplikasi, memastikan bahwa data tetap terorganisir dengan baik dan mudah diakses. Misalnya, dalam bisnis, database dapat berisi data tentang produk, pelanggan, transaksi, karyawan, dan banyak lagi. Data ini sangat penting untuk operasi sehari-hari dan proses pengambilan keputusan strategis perusahaan.
+
+Komponen utama dari DBMS mencakup:
+1. Kumpulan data yang saling terkait.
+2. Sekumpulan program untuk mengakses data.
+3. Lingkungan yang nyaman dan efisien.
+
+Tujuan utama dari penggunaan DBMS adalah untuk mengatasi masalah yang dihadapi dalam pengelolaan data sebelumnya, ketika banyak aplikasi menggunakan sistem berkas langsung. Beberapa masalah yang diatasi oleh DBMS meliputi:
+
+1. Data Redundancy: Data bisa ada dalam beberapa berkas, menyebabkan banyak salinan data yang sama.
+2. Inconsistency : Data yang duplikat bisa menjadi tidak konsisten jika satu salinan diperbarui dan yang lain tidak.
+3. Difficulty in Accessing Data : Penggunaan alat kueri yang tidak standar membuat proses pengambilan data tidak efisien.
+4. Need for New Programs: Setiap operasi yang berbeda memerlukan program terpisah, meningkatkan waktu pengembangan.
+5. Data Isolation : Data tersebar dalam berkas yang berbeda, membuat pengumpulan informasi tertentu menjadi rumit.
+6. Integrity Problems : Aturan integritas data tertanam dalam aplikasi, yang membuat perubahan berisiko memperkenalkan kesalahan.
+7. Challenges with Constraints : Mengubah atau menambahkan kendala data sulit karena terdapat dalam kode aplikasi.
+8. Atomicity of Updates : Absennya keutuhan transaksi bisa menyebabkan database menjadi tidak konsisten setelah kegagalan sistem.
+9. Concurrent Access Issues : Tanpa kontrol konkurensi, modifikasi bersama oleh beberapa pengguna bisa menyebabkan ketidaksesuaian data.
+10. Security Problems : Sistem berkas kurang memiliki kontrol akses yang terperinci.
+
+Salah satu tujuan utama dari DBMS adalah memberikan pandangan abstrak tentang data kepada pengguna. Ini dilakukan melalui model data, yang adalah kerangka konseptual yang menentukan struktur, organisasi, dan aliran data dalam sistem. Ini membantu dalam merancang basis data dengan memberikan panduan.
+
+Ada berbagai jenis model data, termasuk model data relasional, model data Entity-Relationship, model data berbasis objek, dan banyak lainnya. Model ini digunakan untuk menggambarkan data, hubungan antara data, makna data, dan batasan data. Contohnya adalah model data relasional yang mengorganisir data menjadi tabel, seperti dalam MySQL.
+
+Selain itu, ada tipe data berbeda yang digunakan dalam DBMS, termasuk data semi-struktural seperti XML dan JSON, serta model data berbasis objek dan objek-relasional yang menggabungkan karakteristik dari model data relasional dan berbasis objek. Semua ini bertujuan untuk mengelola berbagai jenis data yang berbeda dengan efisien.
+
+#### 📍 View of Data
+
+View of Data - Abstraction : cara untuk melihat data dalam beberapa tingkatan yang berbeda
+
+1. Physical Level : Ini menggambarkan bagaimana sebuah rekaman (misalnya, seorang instruktur) disimpan di dalam basis data. Pada tingkat ini, kita peduli tentang bagaimana data benar-benar tersimpan dalam penyimpanan fisik, seperti format penyimpanannya di disk.
+
+2. Logical Level : Ini menggambarkan data yang sebenarnya disimpan dalam basis data dan hubungan antara data tersebut. Ini adalah cara kita memahami struktur data dalam basis data, seperti tabel, kolom, dan bagaimana data ini terhubung satu sama lain.
+
+3. View Level : Ini adalah tingkat di mana program aplikasi menyembunyikan detail tentang tipe data kepada pengguna. Dalam konteks ini, "View" adalah cara data ditampilkan kepada pengguna aplikasi. Ini dapat digunakan untuk menyembunyikan informasi tertentu, seperti gaji seorang karyawan, untuk tujuan keamanan.
+
+#### 📍 DB Languages, Design, Architecture, and Users and Administrator
+
+Data Definition Language (DDL) adalah bahasa yang digunakan untuk mendefinisikan skema atau struktur basis data. Ini adalah cara untuk menentukan bagaimana tabel, kolom, dan aturan integritas data akan terlihat dalam basis data. DDL digunakan untuk membuat, mengubah, atau menghapus tabel dan objek lainnya dalam basis data.
+
+Sebagai contoh, mari ambil perintah DDL untuk membuat sebuah tabel dengan nama "instructor" dalam basis data:
+
+create table instructor (
+  ID char(5),
+  name varchar(20),
+  dept_name varchar(20),
+  salary numeric(8,2)
+)
+
+Perintah ini digunakan untuk membuat tabel "instructor" dengan empat kolom: ID, nama, dept_name, dan salary. Setiap kolom memiliki tipe data yang berbeda-beda, seperti char (karakter), varchar (string variabel), dan numeric (angka). Ini adalah contoh dari bagaimana DDL digunakan untuk mendefinisikan skema atau struktur data dalam basis data.
+
+Setelah perintah DDL seperti ini dijalankan, kompiler DDL akan menghasilkan serangkaian templat tabel yang disimpan dalam kamus data (data dictionary). Kamus data ini berisi metadata, yaitu informasi tentang data, seperti skema basis data, aturan integritas, dan kunci utama (primary key). Metadata ini membantu dalam mengatur dan mengelola basis data.
+
+Selain itu, DDL juga terkait dengan izin (authorization) yang mengatur siapa yang dapat mengakses apa dalam basis data. Ini berarti DDL juga dapat digunakan untuk mengatur hak akses dan penggunaan data dalam basis data. Misalnya, dengan DDL, Anda dapat menentukan siapa yang memiliki izin untuk membaca, menulis, atau menghapus data dalam tabel tertentu.
+
+Data Manipulation Language atau DML adalah bahasa yang digunakan untuk mengakses dan memperbarui data yang diorganisir sesuai dengan model data yang sesuai. DML juga sering disebut sebagai bahasa query karena digunakan untuk mengambil informasi dari basis data atau untuk memperbarui informasi dalamnya.
+
+Dalam DML, ada dua jenis utama:
+
+1. DML Procedural: Dalam jenis ini, pengguna harus secara eksplisit menentukan data apa yang dibutuhkan dan bagaimana cara mendapatkannya. Ini berarti pengguna memberikan langkah-langkah atau instruksi tertentu untuk mengambil atau memanipulasi data. Pendekatan ini memerlukan pengguna untuk menggambarkan proses langkah demi langkah. Contohnya adalah bahasa pemrograman SQL, di mana pengguna mendefinisikan perintah-perintah untuk mengambil atau mengubah data.
+
+2. DML Declarative: Dalam jenis ini, pengguna hanya perlu menentukan data apa yang dibutuhkan tanpa harus menjelaskan secara rinci cara mendapatkannya. Ini lebih seperti memberikan pernyataan mengenai apa yang diinginkan, dan sistem basis data akan mencari cara untuk memenuhi permintaan tersebut. Pendekatan ini lebih mudah dipelajari dan digunakan karena pengguna tidak perlu terlalu mendalam tentang cara teknis mendapatkan data. DML declarative juga sering disebut sebagai DML non-procedural.
+
+Bagian dari DML yang terkait dengan pengambilan informasi disebut sebagai bahasa query. Ini adalah bagian dari DML yang digunakan untuk mengajukan pertanyaan atau mengambil data dari basis data sesuai dengan kriteria yang diberikan.
+
+Dalam DML, baik procedural maupun declarative memiliki peran penting dalam mengelola dan memanipulasi data dalam basis data. Keduanya digunakan tergantung pada kebutuhan pengguna dan kompleksitas operasi yang akan dilakukan pada data.
+
+SQL Query Language merupakan jenis bahasa nonprosedural. Dalam SQL, sebuah query mengambil beberapa tabel sebagai input (mungkin hanya satu) dan selalu mengembalikan satu tabel sebagai hasil.
+
+Sebagai contoh, jika kita ingin mencari semua instruktur (dosen) yang bekerja di departemen Ilmu Komputer (Comp. Sci.), kita dapat menggunakan perintah SQL seperti ini:
+
+select name
+from instructor
+where dept_name = 'Comp. Sci.'
+
+Dalam perintah ini, kita menginstruksikan basis data untuk mengembalikan nama-nama instruktur yang bekerja di departemen 'Comp. Sci.'. Namun, perintah ini tidak memberikan detail tentang bagaimana sistem harus mengambil data ini. Sistem manajemen basis data (DBMS) yang kita gunakan akan menentukan jalur optimal untuk mendapatkan hasil ini.
+
+Jadi, dalam SQL, kita hanya perlu menyatakan apa yang kita inginkan (yaitu, daftar nama instruktur di departemen tertentu), dan DBMS akan mengurus bagaimana cara melakukan operasi pencarian tersebut. Inilah mengapa SQL dianggap sebagai bahasa nonprosedural, karena pengguna hanya perlu mendeskripsikan apa yang mereka inginkan tanpa perlu memberikan langkah-langkah rinci tentang cara mendapatkannya.
+
+SQL, sebagai bahasa kueri non-prosedural, dirancang khusus untuk mengelola dan mengambil data dari basis data relasional. Namun, ada beberapa keterbatasan dalam penggunaan SQL:
+
+- SQL tidak memiliki mekanisme bawaan untuk menerima masukan dinamis dari pengguna. Ini berarti SQL tidak dapat langsung berinteraksi dengan pengguna untuk mengambil nilai yang mungkin berubah.
+-  SQL hanya bertanggung jawab atas pengambilan dan pemrosesan data. Ini tidak mengatur cara hasilnya ditampilkan kepada pengguna akhir. Tampilan akhir kepada pengguna seringkali merupakan tanggung jawab aplikasi yang menggunakan SQL.
+- SQL tidak dirancang untuk menangani tugas-tugas jaringan seperti mengirim atau menerima data melalui jaringan. Ini adalah tanggung jawab lainnya yang harus ditangani oleh aplikasi.
+
+Untuk mengatasi keterbatasan-keterbatasan ini, seringkali digunakan pendekatan seperti "Dynamic SQL" atau "parameterized queries." Dalam pendekatan ini, perintah SQL dibuat secara dinamis, berdasarkan masukan dari pengguna atau kondisi program.
+
+Contoh penggunaan parameterized query dalam SQL adalah sebagai berikut:
+
+SELECT name FROM students WHERE grade = 'A';
+
+Dalam kombinasi dengan bahasa pemrograman lain:
+// Fungsi untuk mendapatkan masukan grade dari pengguna
+grade_input = user_input()
+
+// Membuat perintah SQL dengan parameter grade_input
+query = "SELECT name FROM students WHERE grade = '(grade_input)'"
+
+Dengan menggunakan parameterized query seperti ini, kita dapat menggantikan nilai di dalam perintah SQL dengan nilai yang diberikan oleh pengguna atau oleh program secara dinamis. Ini memungkinkan fleksibilitas dalam mengambil data berdasarkan input yang berubah-ubah, tanpa harus menulis perintah SQL yang berbeda setiap saat.
