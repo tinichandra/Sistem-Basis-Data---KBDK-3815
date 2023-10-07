@@ -1,1 +1,1 @@
-# Peronal Note - Sistem Basis Data KBDK 3815
+# Personal Note - Sistem Basis Data KBDK 3815
